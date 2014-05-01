@@ -89,13 +89,23 @@ function streamContext (cb) {
     if (err) {
       throw err;
     }
-    var parsed_body = JSON.parse(body);
-    if (res.statusCode !== 201) {
-      console.error('Error:', parsed_body.reason);
-      return cb();
-    } else {
+    if (res.statusCode === 201) {
       console.log(repo + ' published successfully.');
       return cb();
+    } else {
+      if (res.statusCode === 500) {
+        var parsed_body = JSON.parse(body);
+        console.error('Error:', parsed_body.message);
+        return cb();
+      } else {
+        if (res.statusCode === 401) {
+          console.error('Error:', 'Access denied');
+          return cb();
+        } else {
+          console.error('Error: Unknown server error');
+          return cb();
+        }
+      }
     }
   });
   return r;

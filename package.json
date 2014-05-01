@@ -1,6 +1,6 @@
 {
   "name": "dockerbuild",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "a client to build and publish docker images from a local build context",
   "main": "index.js",
   "scripts": {

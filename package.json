@@ -1,5 +1,5 @@
 {
-  "name": "build",
+  "name": "dockerbuild",
   "version": "0.1.0",
   "description": "a client to build and publish docker images from a local build context",
   "main": "index.js",

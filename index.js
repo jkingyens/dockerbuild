@@ -70,9 +70,6 @@ function packContext (archivePath, denies) {
   var packer = tar.Pack();
   reader.pipe(packer);
   packer.pipe(fs.createWriteStream('/Users/jkingyens/whynot.tar', 'utf8'));
-  packer.on('data', function (data) {
-    console.log(data.toString());
-  });
   var gzip = zlib.createGzip();
   packer.pipe(gzip);
   return gzip;

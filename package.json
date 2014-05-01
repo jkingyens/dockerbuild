@@ -1,0 +1,36 @@
+{
+  "name": "build",
+  "version": "0.1.0",
+  "description": "a client to build and publish docker images from a local build context",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jkingyens/build.git"
+  },
+  "keywords": [
+    "docker",
+    "coreos"
+  ],
+  "bin": {
+    "publish": "./bin/publish"
+  },
+  "author": "jeff.kingyens@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jkingyens/build/issues"
+  },
+  "homepage": "https://github.com/jkingyens/build",
+  "devDependencies": {
+    "mocha": "^1.18.2"
+  },
+  "dependencies": {
+    "tar": "^0.1.19",
+    "request": "^2.34.0",
+    "colors": "^0.6.2",
+    "fstream": "^0.1.25",
+    "gitignore-parser": "0.0.1"
+  }
+}
